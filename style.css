@@ -1,3 +1,120 @@
 body {
   margin: 0;
 }
+
+nav {
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+nav a {
+  color: white;
+}
+
+.bg-lightgrey {
+  background-color: lightgray;
+}
+
+.spots-container {
+  padding: 32px;
+}
+
+.spot-info {
+  display: flex;
+  gap: 8px;
+}
+
+.spot-img {
+  width: 720px;
+}
+
+.wind-direction-arrow {
+  width: 150px;
+  position: absolute;
+  z-index: 1;
+  filter: invert();
+  transform: rotate(45deg);
+}
+
+.spot-info-description-inner {
+  display: flex;
+  gap: 16px;
+}
+
+.spot-statistics {
+  margin-top: 32px;
+  display: flex;
+  gap: 16px;
+}
+
+.spot-statistics-fish-size {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fishingdays {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.spot-weather-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.weather-table-header {
+  display: flex;
+  gap: 32px;
+}
+
+.weather-table-body {
+  display: flex;
+  gap: 16px;
+}
+
+.caption-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.weather-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.location-arrow {
+  width: 20px;
+}
+
+footer {
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+}
+
+footer a {
+  color: white;
+}

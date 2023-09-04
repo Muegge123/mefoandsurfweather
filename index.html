@@ -6,8 +6,366 @@
     <title>mefoWeather</title>
     <link rel="stylesheet" href="./style.css" />
     <script src="./app.js"></script>
+    <script src="spotdescriptiondata.js"></script>
   </head>
   <body>
-    <h1>Mefo Wetter</h1>
+    <nav>
+      <h1>Mefo Wetter</h1>
+
+      <input type="text" placeholder="spot suchen" />
+      <button onclick="getData()">suchen</button>
+      <button onclick="getPokemonTest()">test</button>
+      <div><a href="tabellenansicht.html">Tabellenansicht</a></div>
+    </nav>
+    <div class="spots-container">
+      <div id="spot-1">
+        <div class="spot-info">
+          <div class="spot-info-img">
+            <img
+              id="wind-direction-arrow-0"
+              class="wind-direction-arrow"
+              src="./img/location-arrow-solid.svg"
+              alt=""
+            />
+            <img class="spot-img" src="./img/brodtner-ufer-test.png" alt="" />
+          </div>
+          <div class="spot-description-and-statistics">
+            <div class="spot-info-description">
+              <div><h3>Spot Info:</h3></div>
+              <div class="spot-info-description-inner">
+                <div class="spot-info-description-labels">
+                  <div>beste Windrichtung:</div>
+                  <div>Windrichtung OK:</div>
+                  <div>Wellen angelbar:</div>
+                  <div>Niedrig/Hochwasser:</div>
+                </div>
+                <div class="spot-info-description-data">
+                  <div>NW, W, SO</div>
+                  <div>N, S</div>
+                  <div>0.5</div>
+                  <div>normal, hoch</div>
+                </div>
+              </div>
+            </div>
+            <div class="spot-statistics">
+              <div class="spot-statistics-fish-size">
+                <div><br /></div>
+                <div>kleiner 40 cm:</div>
+                <div>41 - 50 cm:</div>
+                <div>größer 50 cm:</div>
+              </div>
+              <div class="fishingdays">
+                <div>Angeltage</div>
+                <div>1</div>
+                <div>1</div>
+                <div>1</div>
+              </div>
+              <div class="success">
+                <div>Erfolg</div>
+                <div>1</div>
+                <div>1</div>
+                <div>1</div>
+              </div>
+              <div class="number">
+                <div>Anzahl</div>
+                <div>1</div>
+                <div>1</div>
+                <div>1</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="spot-weather-header">
+          <h2>Spot Name</h2>
+          <p>(DWD Station Nr: <span id="stationnr-spot-1">12345</span>)</p>
+        </div>
+        <div class="weather-table-body">
+          <!-- first row -->
+          <div class="caption-row bg-lightgrey">
+            <div>Datum</div>
+            <div>Zeit</div>
+            <div>Wetter (Wolken Sonne)</div>
+            <div>Niederschlag (mm/3h)</div>
+            <div>Luftdruck (hPa)</div>
+            <div>Wind-Richtung</div>
+            <div><strong>Wind-Grad</strong></div>
+            <div>Wind-Speed</div>
+            <div>Wind Böen</div>
+            <div>Lufttemperatur</div>
+            <div>Wassertemperatur</div>
+            <div>Wasserstand</div>
+            <div>Wellenhöhe</div>
+          </div>
+          <!-- weather row -->
+          <div class="weather-row">
+            <div>01.09.</div>
+            <div>00h</div>
+            <div>Sonne</div>
+            <div>0.1</div>
+            <div>1076</div>
+            <div>
+              <img
+                class="location-arrow"
+                src="./img/location-arrow-solid.svg"
+                alt=""
+              />
+            </div>
+            <div id="wind-degree"><strong>300</strong></div>
+            <div>4</div>
+            <div>x</div>
+            <div>18</div>
+            <div>17</div>
+            <div>+90</div>
+            <div>0.1</div>
+          </div>
+          <!-- weather row -->
+          <div class="weather-row">
+            <div>01.09.</div>
+            <div>06h</div>
+            <div>Sonne</div>
+            <div>0.1</div>
+            <div>1076</div>
+            <div>
+              <img
+                class="location-arrow"
+                src="./img/location-arrow-solid.svg"
+                alt=""
+              />
+            </div>
+            <div id="wind-degree"><strong>300</strong></div>
+            <div>4</div>
+            <div>x</div>
+            <div>18</div>
+            <div>17</div>
+            <div>+90</div>
+            <div>0.1</div>
+          </div>
+          <!-- weather row -->
+          <div class="weather-row">
+            <div>01.09.</div>
+            <div>12h</div>
+            <div>Sonne</div>
+            <div>0.1</div>
+            <div>1076</div>
+            <div>
+              <img
+                class="location-arrow"
+                src="./img/location-arrow-solid.svg"
+                alt=""
+              />
+            </div>
+            <div id="wind-degree"><strong>300</strong></div>
+            <div>4</div>
+            <div>x</div>
+            <div>18</div>
+            <div>17</div>
+            <div>+90</div>
+            <div>0.1</div>
+          </div>
+          <!-- weather row -->
+          <div class="weather-row">
+            <div>01.09.</div>
+            <div>18h</div>
+            <div>Sonne</div>
+            <div>0.1</div>
+            <div>1076</div>
+            <div>
+              <img
+                class="location-arrow"
+                src="./img/location-arrow-solid.svg"
+                alt=""
+              />
+            </div>
+            <div id="wind-degree"><strong>300</strong></div>
+            <div>4</div>
+            <div>x</div>
+            <div>18</div>
+            <div>17</div>
+            <div>+90</div>
+            <div>0.1</div>
+          </div>
+          <!-- weather row -->
+          <div class="weather-row">
+            <div>02.09.</div>
+            <div>00h</div>
+            <div>Sonne</div>
+            <div>0.1</div>
+            <div>1076</div>
+            <div>
+              <img
+                class="location-arrow"
+                src="./img/location-arrow-solid.svg"
+                alt=""
+              />
+            </div>
+            <div id="wind-degree"><strong>300</strong></div>
+            <div>4</div>
+            <div>x</div>
+            <div>18</div>
+            <div>17</div>
+            <div>+90</div>
+            <div>0.1</div>
+          </div>
+          <!-- weather row -->
+          <div class="weather-row">
+            <div>02.09.</div>
+            <div>06h</div>
+            <div>Sonne</div>
+            <div>0.1</div>
+            <div>1076</div>
+            <div>
+              <img
+                class="location-arrow"
+                src="./img/location-arrow-solid.svg"
+                alt=""
+              />
+            </div>
+            <div>300</div>
+            <div>4</div>
+            <div>x</div>
+            <div>18</div>
+            <div>17</div>
+            <div>+90</div>
+            <div>0.1</div>
+          </div>
+          <!-- weather row -->
+          <div class="weather-row">
+            <div>02.09.</div>
+            <div>12h</div>
+            <div>Sonne</div>
+            <div>0.1</div>
+            <div>1076</div>
+            <div>
+              <img
+                class="location-arrow"
+                src="./img/location-arrow-solid.svg"
+                alt=""
+              />
+            </div>
+            <div>300</div>
+            <div>4</div>
+            <div>x</div>
+            <div>18</div>
+            <div>17</div>
+            <div>+90</div>
+            <div>0.1</div>
+          </div>
+          <!-- weather row -->
+          <div class="weather-row">
+            <div>02.09.</div>
+            <div>18h</div>
+            <div>Sonne</div>
+            <div>0.1</div>
+            <div>1076</div>
+            <div>
+              <img
+                class="location-arrow"
+                src="./img/location-arrow-solid.svg"
+                alt=""
+              />
+            </div>
+            <div>300</div>
+            <div>4</div>
+            <div>x</div>
+            <div>18</div>
+            <div>17</div>
+            <div>+90</div>
+            <div>0.1</div>
+          </div>
+          <!-- weather row -->
+          <div class="weather-row">
+            <div>03.09.</div>
+            <div>00h</div>
+            <div>Sonne</div>
+            <div>0.1</div>
+            <div>1076</div>
+            <div>
+              <img
+                class="location-arrow"
+                src="./img/location-arrow-solid.svg"
+                alt=""
+              />
+            </div>
+            <div id="wind-degree"><strong>300</strong></div>
+            <div>4</div>
+            <div>x</div>
+            <div>18</div>
+            <div>17</div>
+            <div>+90</div>
+            <div>0.1</div>
+          </div>
+          <!-- weather row -->
+          <div class="weather-row">
+            <div>03.09.</div>
+            <div>06h</div>
+            <div>Sonne</div>
+            <div>0.1</div>
+            <div>1076</div>
+            <div>
+              <img
+                class="location-arrow"
+                src="./img/location-arrow-solid.svg"
+                alt=""
+              />
+            </div>
+            <div>300</div>
+            <div>4</div>
+            <div>x</div>
+            <div>18</div>
+            <div>17</div>
+            <div>+90</div>
+            <div>0.1</div>
+          </div>
+          <!-- weather row -->
+          <div class="weather-row">
+            <div>03.09.</div>
+            <div>12h</div>
+            <div>Sonne</div>
+            <div>0.1</div>
+            <div>1076</div>
+            <div>
+              <img
+                class="location-arrow"
+                src="./img/location-arrow-solid.svg"
+                alt=""
+              />
+            </div>
+            <div>300</div>
+            <div>4</div>
+            <div>x</div>
+            <div>18</div>
+            <div>17</div>
+            <div>+90</div>
+            <div>0.1</div>
+          </div>
+          <!-- weather row -->
+          <div class="weather-row">
+            <div>03.09.</div>
+            <div>18h</div>
+            <div>Sonne</div>
+            <div>0.1</div>
+            <div>1076</div>
+            <div>
+              <img
+                class="location-arrow"
+                src="./img/location-arrow-solid.svg"
+                alt=""
+              />
+            </div>
+            <div>300</div>
+            <div>4</div>
+            <div>x</div>
+            <div>18</div>
+            <div>17</div>
+            <div>+90</div>
+            <div>0.1</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <a href="https://fontawesome.com">all icons by fontawesome.com</a>
+    </footer>
   </body>
 </html>
